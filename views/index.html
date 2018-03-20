@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel='stylesheet' href='css/main.css' />
+<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="vue/vue.min.js"></script>
+<script src="js/main.js"></script>
+</head>
+<body>
+
+<div id="app">
+    {{ message }}
+    <menu-section></menu-section>
+    <description-section></description-section>
+</div>
+
+<template id="menuTemplate">
+</template>
+
+<div id="app2">
+    <!-- 取得使用者當前輸入，更新 userInput -->
+    <!-- 當 userInput 更新，也會同步輸入框數值 -->
+    <input	type="text" v-model="userInput" />
+
+    <!-- 單次綁定 (僅更新一次，之後數值更動也不會更新) -->
+	<p v-once>{{ msg }}</p>
+	
+	<!-- 把內容當成 HTML 解析 -->
+	<p v-html="raw_html"></p>
+	
+	<!-- 屬性綁定 -->	
+	<a v-bind:href="pageLink">2</a>
+	<div v-bind:id="dynamicId">3</div>
+	<button v-bind:disabled="isDisabled">Submit</button>
+    {{username | uppercase}}
+
+    <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">000</div>
+    <button :class="btnOptions()">按我</button>
+
+    <li v-for="(value, key, index) in userInfo">
+        {{ index }} - {{ key }} : {{ value }}
+    </li>
+
+    <input	type="text" v-model="userInfo.FirstName" />
+    <input	type="text" v-model="userInfo.LastName" />
+</div>
+
+<div id="userProfile">
+    <p> 名字: {{ wufirstName }}</p>
+    <p> 姓氏: {{ wulastName }}</p>
+    <p>{{ wufullName }}</p>
+    <p>{{ wushortName }}</p>
+    <button v-on:click="countUserClick">Add 1</button>
+    <p>The button above has been clicked {{ counter }} times.</p>
+    <button v-on:click="say('hi')">Hi</button>
+    <button v-on:click="say('hello')">Hello</button>
+</div>
+
+<div class="container">
+    <div class="table-wrapper">
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8"><h2>Employee <b>Details</b></h2></div>
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-info add-new"><i class="fa fa-plus"></i> Add New</button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Department</th>
+                    <th>Phone</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>John Doe</td>
+                    <td>Administration</td>
+                    <td>(171) 555-2222</td>
+                    <td>
+                        <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Peter Parker</td>
+                    <td>Customer Service</td>
+                    <td>(313) 555-5735</td>
+                    <td>
+                        <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Fran Wilson</td>
+                    <td>Human Resources</td>
+                    <td>(503) 555-9931</td>
+                    <td>
+                        <a class="add" title="Add" data-toggle="tooltip"><i class="material-icons">&#xE03B;</i></a>
+                        <a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                        <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                    </td>
+                </tr>      
+            </tbody>
+        </table>
+    </div>
+</div>   
+
+</body>
+</html>

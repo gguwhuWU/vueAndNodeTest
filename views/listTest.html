@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>list Test</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel='stylesheet' href='css/main.css' />
+<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' />
+<link rel='stylesheet' href="toastr/toastr.min.css"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="toastr/toastr.min.js"></script>
+<script src="vue/vue.min.js"></script>
+<script src="axios/axios.min.js"></script>
+<script src="axios-mock-adapter/axios-mock-adapter.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/listTest.js"></script>
+</head>
+<body>
+    <h1>Todo List CRUD: Vue.js</h1>
+    <div id="listExample" class="container">
+        <my-component-input></my-component-input>
+        <my-component-edit-list></my-component-edit-list>
+        <my-component-switch-button-group></my-component-switch-button-group>
+   </div>
+</body>
+</html>
+
+<script type="text/x-template" id="componentInput">
+    <div class="form-group row">
+        <div class="col-8 text-center">
+            <input type="text" class="form-control" v-model.trim="newJob" placeholder="加入一個新工作" v-on:keyup.enter="submit">
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="componentEditList">
+    <ul class="list-group">
+        <li class="list-group-item" v-for="(item, key, index) in list">
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" v-bind:index="index" v-bind:key="key" v-on:click="switchState(key)" v-bind:checked="item.checked">
+                    <span  class="text-center" v-bind:class="{ 'text-danger': item.checked }" v-show="!item.isEditeState">{{ item.value }}</span>
+                    <input type="text" class="form-control" v-model.trim="item.value" v-on:keyup.enter="closeEditeInput(key)" v-show="item.isEditeState">
+                </label>
+                <button type="button" class="btn btn-success" v-on:click="openEditeInput(key)" >編輯</button>
+                <button type="button" class="btn btn-danger" v-on:click="deleteItem(key)" >刪除</button>
+            </div>
+        </li>
+    </ul>
+</script>
+
+<script type="text/x-template" id="switchButtonGroup">
+    <div class="form-group row">
+        <div class="col-12 text-center">
+            
+            <br>
+            <div class="progress">
+                <div class="progress-bar bg-dark" style="width:100%"></div>
+            </div>
+            <br>
+
+            <button type="button" class="btn badge-size" :class="{ 'btn-info': isFilterAll }"  v-on:click="switchPage('all')">全部 <span class="badge" :class="[isFilterAll ? 'badge-light':'badge-secondary']">{{ allListTotal }}</span></button>
+            <button type="button" class="btn badge-size" :class="{ 'btn-danger': isFilterUndo }"  v-on:click="switchPage('undo')">未完成 <span class="badge" :class="[isFilterUndo ? 'badge-light':'badge-secondary']">{{ undoneTotal }}</span></button>
+            <button type="button" class="btn badge-size" :class="{ 'btn-success': isFilterComplete }"  v-on:click="switchPage('complete')">已完成 <span class="badge" :class="[isFilterComplete ? 'badge-light':'badge-secondary']">{{ completedTotal }}</span></button>
+        </div>
+    </div>
+</script>

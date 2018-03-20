@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Component Test</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel='stylesheet' href='css/main.css' />
+<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' />
+<link rel='stylesheet' href="toastr/toastr.min.css"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="toastr/toastr.min.js"></script>
+<script src="vue/vue.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/componentTest.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <menu-section></menu-section>
+        <description-section></description-section>
+    </div>
+    <br>
+    <div id="app2">
+        <my-menu></my-menu>
+    </div>
+    <br>
+    <div id="app">
+        <input class="form-control" type="text" v-model="name" placeholder="edit here"></input><br>
+        <child my-message="hello!"></child><br>
+        <prompt-component v-bind:user-name="name"></prompt-component><br>
+        <todo-item v-bind="todo"></todo-item><br>
+        <!--
+        <todo-item
+        v-bind:text="todo.text"
+        v-bind:is-complete="todo.isComplete"></todo-item><br>
+        -->
+    </div>
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="propsTester">
+        <div class="container">
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-4 form-control-label">Made From</label>
+                    <div class="col-sm-8">
+                        <input type="text" v-model="madeFrom" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 form-control-label">Product Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" v-model="product.name" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 form-control-label">Product Price</label>
+                    <div class="col-sm-8">
+                        <input type="text" v-model="product.price" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-4 form-control-label">Product Desc</label>
+                    <div class="col-sm-8">
+                        <input type="text" v-model="product.description" class="form-control">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- 使用 ProductCard 子組件 -->
+        <product-card v-bind:made-from="madeFrom" :product="product" :more-info="showMoreInfo" v-on:madeFromChanged="onMadeFromChanged"></product-card>
+    </div>
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="counter-event-example" class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"><p class="text-success text-center">{{ total }}</p></div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col text-center"><button-counter door="前門" v-on:increment="incrementTotal"></button-counter></div>
+            <div class="col text-center"><button-counter door="後門" v-on:increment="incrementTotal"></button-counter></div>
+            <div class="col text-center"><button-counter door="員工門"></button-counter></div>
+        </div>
+        <br>
+        <div class="row">
+                <div class="col"></div>
+                <div class="col"><currency-input v-model="price"></currency-input></div>
+                <div class="col"></div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="propTest4" class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"><button class="btn btn-info" @click="eve">me</button></div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="propTest4_2" class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"><span>{{message}}</span></div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="propTest5" class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <div id="parent">
+                    <span>爸在這</span>
+                    <my-header :msg="{dady}" @toparent="fromSon"></my-header>
+                </div>
+            </div>
+            <div class="col"></div>
+         </div>
+    </div>
+
+    <div id="propTest6" class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col"><my-component></my-component></div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <div id="propTest7" class="container">
+        <app-layout>
+          <app-header :id="1">Hello</app-header>
+          <app-footer :id="2"></app-footer>
+        </app-layout>
+    </div>
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="propTest8" class="container">
+        <test8layout>
+          <p slot="header">這裡可能是一個頁面標題</p>
+          <p>主要內容的一個段落。</p>
+          <p>另一個主要段落。</p>
+          <p slot="footer">這裡有一些聯繫信息</p>
+        </test8layout>
+    </div>
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="propTest9" class="container">
+        <app-layout2>
+          <app-header2>
+            <template scope="props">
+              <span>{{ props.text }}</span>
+            </template>
+          </app-header2>
+          <app-footer2>
+            <template scope="props">
+              <!--<span>>{{ props.text }}</span>-->
+            </template>
+          </app-footer2>
+        </app-layout2>
+    </div>
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="propTest10" class="container">
+        <test10list :items="items">
+          <template slot="item" scope="props">
+            <li>{{ props.text }}</li>
+          </template>
+        </test10list>
+    </div>
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="propTest11" class="container">
+        <ul class="list-group">
+          <li class="list-group-item text-center"><a href="#" @click.prevent="changeView('home')" >home</a></li>
+          <li class="list-group-item text-center"><a href="#" @click.prevent="changeView('posts')">posts</a></li>
+          <li class="list-group-item text-center"><a href="#" @click.prevent="changeView('archive')">archieve</a></li>
+        </ul>    
+        <component :is="view"></component>
+    </div>
+
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="propTest12" class="container">
+        <ul class="list-group">
+          <li class="list-group-item text-center"><a href="#" @click.prevent="changeView('home')">home</a></li>
+          <li class="list-group-item text-center"><a href="#" @click.prevent="changeView('posts')">posts</a></li>
+          <li class="list-group-item text-center"><a href="#" @click.prevent="changeView('archive')">archieve</a></li>
+        </ul>
+        <component :is="view"></component>
+        <keep-alive>
+          <component :is="view"></component>
+        </keep-alive>
+    </div>
+</body>
+</html>

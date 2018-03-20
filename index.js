@@ -1,0 +1,28 @@
+var express = require('express');
+var app = express();
+
+var routes = require('./routes/index');
+var users = require('./routes/users');
+
+//設定靜態檔案所在目錄
+app.use(express.static(__dirname + '/public'))
+app.use('/jquery', express.static(__dirname + '/node_modules/jquery/dist/'))
+app.use('/bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/'))
+app.use('/vue', express.static(__dirname + '/node_modules/vue/dist/'))
+app.use('/toastr', express.static(__dirname + '/node_modules/toastr/build/'))
+app.use('/axios', express.static(__dirname + '/node_modules/axios/dist/'))
+app.use('/axios-mock-adapter', express.static(__dirname + '/node_modules/axios-mock-adapter/dist/'))
+app.use('/vee-validate', express.static(__dirname + '/node_modules/vee-validate/dist/'))
+
+//將html網頁交給ejs模組來處理
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
+
+//設定路由
+app.use('/', routes);
+app.use('/users', users);
+
+// port號
+app.listen(3000);
+
+module.exports = app;

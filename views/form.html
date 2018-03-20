@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>form</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel='stylesheet' href='css/main.css' />
+<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="vue/vue.min.js"></script>
+<script src="js/form.js"></script>
+</head>
+<body>
+    <div id="app" class="form-group">
+        <input class="form-control" type="text" v-model="message" placeholder="edit here"></input>
+        <br><span >{{ message }}</span>
+        <br>
+
+        <select class="form-control" v-model="selected">
+            <option disabled value="">Please select one</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <br><span >Selected: {{ selected }}</span><br>
+        
+        <input class="form-control" type="radio" id="developer" v-bind:value="developer" v-model="role">
+        <label class="control-label col-sm-2"  for="developer">{{ developer }}</label>
+        <input class="form-control" type="radio" id="manager" v-bind:value="manager" v-model="role">
+        <label class="control-label col-sm-2"  for="manager">{{ manager }}</label>
+        <input class="form-control" type="radio" id="designer" v-bind:value="designer" v-model="role">
+        <label class="control-label col-sm-2"  for="designer">{{ designer }}</label>
+        <br><span>職稱: {{ role }}</span><br>
+        
+        <!--
+        <input class="form-control" type="checkbox" id="gaming" v-bind:value="gaming" v-model="habits">
+        <label class="control-label col-sm-2"  for="gaming">{{ gaming }}</label>
+        <input class="form-control" type="checkbox" id="coding" v-bind:value="coding" v-model="habits">
+        <label class="control-label col-sm-2"  for="coding">{{ coding }}</label>
+        <input class="form-control" type="checkbox" id="hiking" v-bind:value="hiking" v-model="habits">
+        <label class="control-label col-sm-2"  for="hiking">{{ hiking }}</label>
+        -->
+        <template v-for="habit in options">
+        <input class="form-control" type="checkbox"
+                   id="{{ habit }}"
+                   :value="habit"
+                   v-model="habits">
+        <label class="control-label col-sm-2" for="{{ habit }}">{{ habit }}</label>          
+        </template>           
+        <br><span>興趣: {{ habits }}</span><br>
+        
+        <input text="number" v-model.number="numberValue">
+        <input text="text" v-model.trim="trimValue">
+        <input text="text" v-model.lazy="lazyValue">
+
+        <br>
+        萌萌嗎？<input type="checkbox" v-model="isMoeMoe">
+        <p>只要雙方同意，就讓他們在一起吧</p>
+        <input
+            type="checkbox"
+            v-model="toggle"
+            v-bind:true-value="a"
+            v-bind:false-value="b">
+        <br><span>{{ toggle }}</span><br>
+        
+        <p>常威喜歡哪一把</p>
+        <select v-model="selectedValue">
+            <option >老大別砍我</option>
+            <option v-for="(sword, index) in swords" v-bind:value="sword" v-bind:index="index"> {{ sword }},{{ index }}</option>
+        </select><br>
+        <span>Selected: {{ selectedValue }}</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.14.0",
+    "bootstrap": "^4.0.0",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "jquery": "^3.3.1",
+    "nodemon": "^1.14.12",
+    "toastr": "^2.1.4",
+    "vee-validate": "^2.0.4",
+    "vue": "^2.5.13"
+  }
+}

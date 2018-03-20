@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ajax Test</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel='stylesheet' href='css/main.css' />
+<link rel='stylesheet' href='bootstrap/css/bootstrap.min.css' />
+<link rel='stylesheet' href="toastr/toastr.min.css"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="toastr/toastr.min.js"></script>
+<script src="vue/vue.min.js"></script>
+<script src="vee-validate/vee-validate.min.js"></script>
+<script src="axios/axios.min.js"></script>
+<script src="axios-mock-adapter/axios-mock-adapter.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/ajaxTest.js"></script>
+</head>
+<body>
+    <div id="axiosTest1" class="container">
+        <form>
+            <div class="form-group row">
+                <label for="colFormLabelSm" class="col-2 col-form-label ">編號:</label>
+                <div class="col-10 text-center">
+                    <input type="text" class="form-control" id="UserId" v-model.trim="userId" placeholder="請輸入編號" 
+                    data-vv-delay="500" v-validate="'required|numeric'" name="vUserId">
+                </div>
+                <div class="alert alert-danger col text-center" role="alert" v-show="errors.has('vUserId')">
+                    {{ errors.first('vUserId') }}
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">姓名</span>
+                </div>
+                <input type="text" class="form-control" v-model.trim="userName" placeholder="請輸入姓名" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">密碼</span>
+                </div>
+                <input type="password" class="form-control" v-model.trim="userPassword" placeholder="請輸入密碼" aria-label="UserPassword" aria-describedby="basic-addon1">
+            </div>
+            
+        </form>
+
+        <div class="row">
+            <div class="col text-center"><button class="btn btn-info" @click.prevent="getData">取得使用者資料</button></div>
+            <div class="col text-center"><button class="btn btn-info" @click.prevent="postData">儲存使用者資料</button></div>
+        </div>
+    </div>
+    
+    <br>
+    <div class="progress">
+        <div class="progress-bar bg-dark" style="width:100%"></div>
+    </div>
+    <br>
+
+    <div id="propTest1" class="container">
+        <record-element v-for="myrecord in list" :record="myrecord" @after-update="updateList"></record-element>
+        <!-- 靜態綁法 -->
+        <!-- <child type="primary" my-message="hello!"></child> -->
+        <!-- 動態綁法 -->
+        <child :type="classType" :my-message="msg"></child>
+        <my-component></my-component>
+        <admin-post inline-template>
+            <div class="row">
+                <h1>{{ message }}</h1>
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    ...
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    ...
+                </div>
+            </div>
+        </admin-post>
+    </div>
+
+    <div id="lifecycle" class="container">
+        <example id="1"></example>
+        <example id="2"></example>
+    </div>
+
+    <div id="componentTest" class="container">
+        <child></child>
+        <button @click="callChildMethod">child</button>
+        <user-profile ref="profile"></user-profile>
+        <button @click="calltestMethod">child2</button>
+        <br>
+        <span v-pre>{{ this will not be compiled }}</span>
+        <span v-once>This will never change: {{msg}}</span>
+        <!-- 有子元素 -->
+        <div v-once>
+            <h1>comment</h1>
+            <p>{{msg}}</p>
+        </div>
+        <!-- 组件 -->
+        <my-component v-once :comment="msg"></my-component>
+        <!-- `v-for` 指令-->
+        <ul>
+            <li v-for="i in list" v-once>{{i}}</li>
+        </ul>
+    </div>
+
+    <!-- <div id="propTest11" class="container">
+        <ul class="list-group">
+          <li class="list-group-item text-center">4</li>
+          <li class="list-group-item text-center">5</li>
+          <li class="list-group-item text-center">6</li>
+        </ul>
+    </div>  -->
+</body>
+</html>
+
+<script type="text/x-template" id="my-component">
+    <div class="component">A custom component of Vue - hello!</div>
+</script>
