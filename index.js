@@ -3,6 +3,7 @@ var app = express();
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var dbTest = require('./routes/dbTest');
 
 //設定靜態檔案所在目錄
 app.use(express.static(__dirname + '/public'))
@@ -21,6 +22,7 @@ app.set('view engine', 'ejs');
 //設定路由
 app.use('/', routes);
 app.use('/users', users);
+app.use('/dbTest', dbTest);
 
 // port號
 app.listen(3000);
