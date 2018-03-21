@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize');
 //const db = require('../db/mysqlDb');
-const db = require('../db/sqlserverDb');
+//const db = require('../db/sqlserverDb');
+const db = require('../db/sqliteDb');
 const uuidV4 = require('uuid/v4');
 
 // create model
