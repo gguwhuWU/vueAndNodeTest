@@ -1,30 +1,57 @@
 var express = require('express');
 var router = express.Router();
-var repository = require('../repository/mysqlTest');
+var repository = require('../repository/userRepository');
 
 router.get('/', function(req, res, next) {
-    var result = repository.GetItems();
-    res.send(result);
+    repository.GetItems()
+    .then(function (result) {
+        res.send(result);
+    }).catch(function (err) {
+        res.status(500).send(err.message);
+    });
 });
 
 router.get('/:id', function(req, res, next) {
-    var result = repository.GetItem(req.params.id);
-    res.send(result);
+    repository.GetItem(req.params.id)
+    .then(function (result) {
+        res.send(result);
+    }).catch(function (err) {
+        res.status(500).send(err.message);
+    });
 });
 
 router.delete('/:id', function(req, res, next) {
-    var result = repository.DeleteItem(req.params.id);
-    res.send(result);
+    repository.DeleteItemById(req.params.id).
+    then(function (result) {
+        res.send('ok');
+    }).catch(function (err) {
+        res.status(500).send(err.message);
+    });
 });
 
 router.post('/', function(req, res) {
-    var result = repository.CreateItem(req.params.id, '5');
-    res.send(result);
+    
+    var gender = req.body.gender;
+    var userName = req.body.userName;
+    var email = req.body.email;  
+    var version =  req.body.version; 
+    var commit = req.body.commit;
+
+    repository.CreateItem(gender, userName, email, version, commit)
+    .then(function (p) {
+        res.send('ok');
+    }).catch(function (err) {
+        res.status(500).send(err.message);
+    });
 });
 
-router.put('/:id', function(req, res) {
-    var result = repository.UpdateItem(req.params.id, '9');
-    res.send(result);
+router.patch('/:id', function(req, res) {
+    repository.UpdateItem(req.params.id, req.body.userName)
+    .then(function (result) {
+        res.send('ok');
+    }).catch(function (err) {
+        res.status(500).send(err.message);
+    });
 });
 
 module.exports = router;
