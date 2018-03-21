@@ -3,7 +3,7 @@ var router = express.Router();
 var repository = require('../repository/userRepository');
 
 router.get('/', function(req, res, next) {
-    repository.GetItems()
+    repository.GetUsers()
     .then(function (result) {
         res.send(result);
     }).catch(function (err) {
@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:id', function(req, res, next) {
-    repository.GetItem(req.params.id)
+    repository.GetUser(req.params.id)
     .then(function (result) {
         res.send(result);
     }).catch(function (err) {
@@ -21,7 +21,7 @@ router.get('/:id', function(req, res, next) {
 });
 
 router.delete('/:id', function(req, res, next) {
-    repository.DeleteItemById(req.params.id).
+    repository.DeleteUserById(req.params.id).
     then(function (result) {
         res.send('ok');
     }).catch(function (err) {
@@ -37,7 +37,7 @@ router.post('/', function(req, res) {
     var version =  req.body.version; 
     var commit = req.body.commit;
 
-    repository.CreateItem(gender, userName, email, version, commit)
+    repository.CreateUser(gender, userName, email, version, commit)
     .then(function (p) {
         res.send('ok');
     }).catch(function (err) {
@@ -46,7 +46,7 @@ router.post('/', function(req, res) {
 });
 
 router.patch('/:id', function(req, res) {
-    repository.UpdateItem(req.params.id, req.body.userName)
+    repository.UpdateUser(req.params.id, req.body.userName)
     .then(function (result) {
         res.send('ok');
     }).catch(function (err) {

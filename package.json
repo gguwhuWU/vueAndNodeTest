@@ -19,6 +19,7 @@
     "mysql2": "^1.5.3",
     "nodemon": "^1.14.12",
     "sequelize": "^4.37.3",
+    "sequelize-msnodesqlv8": "^0.2.6-beta.7",
     "sqlite3": "^4.0.0",
     "tedious": "^2.3.1",
     "toastr": "^2.1.4",

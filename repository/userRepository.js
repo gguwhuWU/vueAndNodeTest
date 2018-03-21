@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
-const db = require('../db/mysqlDb');
+//const db = require('../db/mysqlDb');
+const db = require('../db/sqlserverDb');
 const uuidV4 = require('uuid/v4');
 
 // create model
@@ -42,7 +43,7 @@ var User = db.define('user', {
 var user = User.sync({ force: false });
 
 module.exports = {
-    GetItems : function(){
+    GetUsers : function(){
         // 測試連線
         // db.authenticate()
         // .then(() => {
@@ -59,7 +60,7 @@ module.exports = {
             console.log('failed: ' + err);
         });
     },
-    GetItem : function(id){
+    GetUser : function(id){
         return User.findById(id)
         //.findOne({ where: { id: id } }) //這行也行
         .then(function (data) {
@@ -68,7 +69,7 @@ module.exports = {
             console.log('failed: ' + err);
         });
     },
-    DeleteItemById : function(id){ //FIXME: 刪除不存在 會當作成功
+    DeleteUserById : function(id){ //FIXME: 刪除不存在 會當作成功
         return User.destroy({
             where: {
               id: id
@@ -79,7 +80,7 @@ module.exports = {
             throw Error('failed: ' + err);
         });
     },
-    CreateItem: function(gender, userName, email, version, commit){
+    CreateUser: function(gender, userName, email, version, commit){
         return User.create({
             uuId: uuidV4(),
             gender: gender,
@@ -94,7 +95,7 @@ module.exports = {
             throw Error('failed: ' + err);
         });
     },
-    UpdateItem: function(id, userName){ //FIXME: 更新不存在 會當作成功
+    UpdateUser: function(id, userName){ //FIXME: 更新不存在 會當作成功
         return User.update( 
             { userName: userName }, 
             { where: { id: id }}
