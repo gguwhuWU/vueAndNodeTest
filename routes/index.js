@@ -22,6 +22,11 @@ router.get('/listTest', function(req, res, next) {
   res.render('listTest.html');
 });
 
+
+router.get('/vuetifyTest', function(req, res, next) {
+  res.render('vuetify.html');
+});
+
 router.get('/user', function(req, res, next) {
 
   if (req.query.id == 70915)

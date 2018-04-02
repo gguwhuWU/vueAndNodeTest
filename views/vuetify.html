@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel='stylesheet' href='css/main.css' />
+<link rel='stylesheet' href='vuetify/vuetify.min.css' />
+<script src="jquery/jquery.min.js"></script>
+<script src="vue/vue.min.js"></script>
+<script src="vuetify/vuetify.min.js"></script>
+<script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+<script src="js/vuetifyTest.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <v-app>
+          <v-navigation-drawer fixed app v-model="drawer">
+            <v-list dense>
+              <v-list-tile @click="switchPage('phone')">
+                <v-list-tile-action>
+                  <v-icon>phone</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>手機喔</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+              <v-list-tile @click="switchPage('watch')">
+                <v-list-tile-action>
+                  <v-icon>watch</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>手表喔</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+          </v-navigation-drawer>
+          <v-toolbar fixed app color="primary" dark>
+            <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+            <v-toolbar-title>Vuetify小範例</v-toolbar-title>
+          </v-toolbar>
+          <v-content>
+            <v-container fluid>
+              <v-btn primary>{{page}}</v-btn>
+              <v-btn primary>jojo</v-btn>
+              <my-component-input></my-component-input>
+              
+              <p>
+                <router-link to="/foo">Go to Foo2</router-link>
+                <router-link to="/bar">Go to Bar2</router-link>
+              </p>
+              <router-view></router-view>
+              
+            </v-container>
+          </v-content>
+        </v-app>
+      </div>
+    
+    <script type="text/x-template" id="componentInput">
+        <v-card>
+            <v-card-text>
+              <v-slider v-model="value1" step="0"></v-slider>
+            </v-card-text>
+        </v-card>
+    </script>
+
+</body>
+</html>

@@ -17,6 +17,9 @@ app.use('/toastr', express.static(__dirname + '/node_modules/toastr/build/'))
 app.use('/axios', express.static(__dirname + '/node_modules/axios/dist/'))
 app.use('/axios-mock-adapter', express.static(__dirname + '/node_modules/axios-mock-adapter/dist/'))
 app.use('/vee-validate', express.static(__dirname + '/node_modules/vee-validate/dist/'))
+app.use('/vuetify', express.static(__dirname + '/node_modules/vuetify/dist/'))
+app.use('/vue-route', express.static(__dirname + '/node_modules/vue-route/src/'))
+
 
 //將html網頁交給ejs模組來處理
 app.engine('html', require('ejs').renderFile);
