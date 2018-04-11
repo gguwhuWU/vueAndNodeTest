@@ -2,7 +2,53 @@ $(function () {
     vueDom();
     vueDom2();
     vueDom3();
+    testLodash();
 });
+
+function testLodash(){
+    // 去掉falsy值后的数组
+    console.log(_.compact([0, 1, false, 2, '', 3]));
+    // 找出数组中不同的值
+    console.log(_.difference([1, 2, 3, 4, 5], [5, 2, 10]));
+
+    // 根据条件找出数组元素的索引值，未找到则返回 -1
+    var characters = [
+        { 'name': 'barney',  'age': 36, 'blocked': false },
+        { 'name': 'fred',    'age': 40, 'blocked': true },
+        { 'name': 'pebbles', 'age': 1,  'blocked': false }
+    ];
+    console.log(_.findIndex(characters, function(chr) {
+        return chr.age < 20;
+    }));
+
+    console.log(_.findIndex(characters, { 'age': 36 }));
+    console.log(_.findIndex(characters, 'blocked'));
+
+    // 找出数组中相同的值
+    console.log(_.intersection([1, 2, 3], [5, 2, 1, 4], [2, 1]));
+
+    // 找出数组中最后的值
+    console.log(_.last([1, 2, 3]));
+    console.log(_.last([1, 2, 3], 2));
+
+    // 找出某个值最后出现的索引
+    console.log(_.lastIndexOf([1, 2, 3, 1, 2, 3], 2));
+
+    // 移除数组中指定的值
+    var array = [1, 2, 3, 1, 2, 3];
+    _.pull(array, 2, 3);
+    console.log(array);
+
+    // 返回一个范围数组
+    // _.range([start=0], end, [step=1])
+    console.log(_.range(0, 20, 5));
+
+    // 移除数组中匹配条件的值
+    var array = [1, 2, 3, 4, 5, 6];
+    var evens = _.remove(array, function(num) { return num % 2 == 0; });
+    console.log(array);
+    console.log(evens);
+}
 
 //computed methods
 function vueDom3(){

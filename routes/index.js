@@ -3,6 +3,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  var _ = require('lodash');
+  console.log(_.compact([0, 1, false, 2, '', 3]));
   res.render('Index.html');
 });
 
