@@ -1,0 +1,31 @@
+1. .attributeContains() 檢視屬性（attribute）是否 包含 指定的值
+    browser.assert.attributeContains('.link', 'href', 'sample.com', '連結錯誤');
+2. .attributeEquals() 檢視屬性（attribute）是否 等於 指定的值
+    browser.assert.attributeEquals('.link', 'href', 'sample.com', '連結錯誤');
+3. .containsText() 檢視 DOM element 的 inner text 是否包含某字串
+    browser.assert.containsText('#text', 'Hello World!');
+4. .cssClassPresent() 檢視 DOM element 是否含有某個 CSS class
+    browser.assert.cssClassPresent('#wrap', 'container', '使用的 class 有誤');
+5. .cssClassNotPresent() 檢視 DOM element 是否沒有某個 CSS class
+    browser.assert.cssClassNotPresent('#wrap', 'container');
+6. .cssProperty() 檢視 DOM element 的 CSS 屬性是否含有某個值
+    browser.assert.cssProperty('#text', 'display', 'block');
+7. .elementPresent() 檢視 DOM element 是否存在
+    browser.assert.elementPresent('#text');
+8. .elementNotPresent() 檢視 DOM element 是否不存在
+    browser.assert.elementNotPresent('#text');
+9. .visible() 檢視 DOM element 是否可見
+    browser.assert.visible('.this_element_should_be_visible');
+10. .hidden() 檢視 DOM element 是否隱藏（即不可見）
+    browser.assert.hidden('.this_element_hould_not_be_visible');
+11. .title() 檢視當頁的 title 是否等於特定字串
+    browser.assert.title('露天拍賣');
+12. .urlContains() 檢視目前網址是否 包含 特定字串
+    browser.assert.urlContains('s000.php');
+13. .urlEquals() 檢視目前網址是否 等於 特定字串
+    browser.assert.urlEquals('s000.php');
+14. .value() 檢視目前表單元件的值是否 等於 預期的值
+    browser.assert.value('.account', 'hello_kitty');
+15. .valueContains() 檢視目前表單元件的值是否 包含 預期的值
+    browser.assert.valueContains('.account', 'hello_kitty');
+16.

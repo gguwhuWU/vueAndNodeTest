@@ -1,0 +1,24 @@
+1. .equal(value) 等於 / .contain(value ) 包含 / .match(regex) 符合條件
+    b'http://www.google.com'rowser.expect.element('#text').text.to.equal('Hello World!');
+    browser.expect.element('#text').text.to.contain('Hello World!');
+    browser.expect.element('#text').text.to.match(/^H/);
+2. .not 否定，可表示為不等於、不包含。
+    browser.expect.element('#text').text.to.not.equal('Hello World!');
+3. .before(ms) / .after(ms) 在指定時間前或後重新執行斷言，其後可串接其他判斷，增加重試的機會。
+4. .a(type) / .an(type) 檢視 DOM element 的 tag name / type 是否為預期的值。例如：#text 是否為 <div>。
+    browser.expect.element('#text').to.be.an('input', 'Testing if #text is an input');
+5. .attribute(name) 檢視 DOM element 的是否存在特定的 HTML attribute
+    browser.expect.element('body').to.have.attribute('data-attr');
+6. .css(property) 檢視 DOM element 是否有指定的 css 屬性
+    browser.expect.element('#text').to.have.css('display', 'Testing for display');
+7. .enabled 檢視 DOM element 目前是否 enabled。
+    browser.expect.element('#input').to.be.enabled;
+8. .present 檢視 DOM element 是否存在，但不一定是可見的。若要檢視是否可見，要使用 .visible。
+    browser.expect.element('#text').to.be.present;
+9. .selected 確認 <input> element 的 radio 、checkbox 或 option element 被選取。
+    browser.expect.element('#option').to.be.selected;
+10. .text 取得 DOM element 的 inner text，後續可串連其他斷言的動
+11. .value 取得 DOM element 的值，後續可串連其他斷言的動作
+12. .visible 檢視 DOM element 是否可見，可見就必定存在。
+13. 
+

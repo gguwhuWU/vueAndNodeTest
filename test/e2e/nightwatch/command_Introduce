@@ -1,0 +1,136 @@
+1.打開指定網址
+    .url('')
+2.加上 hash
+    .urlHash('')
+3.切換定位網頁元素的方式，選擇使用 CSS Selector 或 Xpath 來選取網頁元素。
+    .useXpath() .useCss()
+4.模擬點擊 DOM element 的動作
+    .click('')
+5.用於清除 text input 或 textarea 的輸入値
+    .clearValue('input[type=text]')
+6.對某個元件鍵入字串，一般用來對 input text 設値或模擬連續打字，字串格式為 utf-8。
+    .setValue('#userid', 'my_id')
+    .setValue('#userpass', ['my_password', browser.Keys.ENTER])
+7.取得表單元件目前的値。
+    getValue('#userid', function(result) {
+        this.assert.equal(typeof result, 'object');
+        this.assert.equal(result.status, 0);
+        this.assert.equal(result.value, 'HiHi');
+      })
+8.對指定的 DOM element 取得屬性値。
+    .getAttribute('#userid', 'class', function(result) {
+        this.assert.equal(typeof result, "object");
+        this.assert.equal(result.status, 0);
+        this.assert.equal(result.value, 'rt-user-info-input valid');
+      })
+9.取得特定 DOM element 的 tag name。
+    .getTagName('#userid', function(result) {
+        this.assert.equal(result.value, 'abc');
+      })
+10.取得特定 DOM element 的可見文字。
+    .getText('.rt-button-fb-login', result => {
+        browser.assert.equal(result.value, 'abc')
+      })
+11.取得頁面 <title> 的文字。
+    .getTitle(function(title) {
+        this.assert.equal(typeof title, 'string');
+        this.assert.equal(title, 'Nightwatch.js');
+    });
+12.對特定 DOM element 取得 CSS 屬性的值。
+    .getCssProperty("#search_input", "line-height", function(result) {
+        this.assert.equal(typeof result, "object");
+        this.assert.equal(result.status, 0);
+        this.assert.equal(result.value, '27px');
+      })
+13.取得 DOM element 的大小。
+    .getElementSize('.rt-button-fb-login', result => {
+        browser.assert.equal(typeof result, 'object');
+        browser.assert.equal(result.status, 0);
+        browser.assert.equal(result.value.width, 500);
+        browser.assert.equal(result.value.height, 20);
+      })
+14.確認指定的 DOM element 在畫面上是否是可見的。
+    .isVisible('.rt-header-not-loaded', result => {
+        browser.assert.equal(typeof result, 'object');
+        browser.assert.equal(result.status, 0);
+        browser.assert.equal(result.value, true);
+      })
+15.確認 DOM Element 載入完成。等待一段時間，來檢視元素是否存在，使用者不一定會肉眼能看到，但可在 HTML 裡面找到。假設在等待指定時間後，檢視該元素但不存在，測試就會失敗。
+    .waitForElementPresent('body', 1000, false, function() {
+    // do something...
+    }, 'element %s presents in %d ms')
+16.移動滑鼠到指定的 DOM element。
+    .moveToElement('.category-menu', 10, 10);
+17.取得特定 cookie 的値，格式為 JSON。
+    .getCookie('_ts_id', result => {
+        browser.assert.equal(result.name, '_ts_id');
+        browser.assert.equal(typeof result.value, 'string');
+      })
+18.取得所有可得的 cookie，格式為一個陣列，裡面是 JSON。
+    .getCookies(result => {
+        browser.assert.equal(result.value.length, 5);
+      })
+19.設定 cookie。
+    .setCookie({
+        name: 'test_cookie',
+        value: 'Hello World!'
+      })
+20.刪除指定 cookie，若指定的 cookie 不存在就不執行。
+    .deleteCookie('test_cookie')
+21.刪除所有可取得的 cookie，類似上面的 deleteCookie。
+    .deleteCookies('test_cookie')
+22.設定目前 window 的位置，以距離螢幕右下角為基準。
+    .setWindowPosition(100, 100)
+23.設定目前所在視窗。第一個參數是 window 名稱，第二個參數是 callback。
+    browser.switchWindow(handle);
+24.關閉目前的視窗。
+    browser.closeWindow();
+25.調整目前 window 的大小。
+    .resizeWindow(500, 500)
+26.將目前 window 展開到最大。
+    browser.maximizeWindow();
+27.取得指定 DOM element 在頁面上的位置。
+     .getLocation('#userid', function(result) {
+        this.assert.equal(typeof result, "object");
+        this.assert.equal(result.status, 0);
+        this.assert.equal(result.value.x, 200);
+        this.assert.equal(result.value.y, 200);
+      })
+28.取得指定 DOM element 在螢幕上的位置。
+    .getLocationInView('#userid', function(result) {
+        this.assert.equal(typeof result, "object");
+        this.assert.equal(result.status, 0);
+        this.assert.equal(result.value.x, 200);
+        this.assert.equal(result.value.y, 200);
+      })
+29.檢視 log type 是否可用。
+     .isLogAvailable('browser', function(isAvailable) {
+        console.log(isAvailable)
+      })
+30.取得 selenium 的 log。
+    .getLog('browser', function(logEntriesArray) {
+        console.log('Log length: ' + logEntriesArray.length);
+        logEntriesArray.forEach(function(log) {
+           console.log('[' + log.level + '] ' + log.timestamp + ' : ' + log.message);
+         });
+      })
+31.取得可用的 log types，回傳一個陣列。
+    .getLogTypes(function(typesArray) {
+        console.log(typesArray);
+      })
+32.功能同 .url()，用於設定 launch_url。
+    .init('https://cythilya.github.io/')
+33.可在 callback 中執行 Nightwatch 所提供的指令，或執行某件事情，做完記得呼叫 done()。
+    .perform(function(done) {
+        console.log('elementValue', elementValue);
+        done();
+      })
+34.載入外部 script 檔案
+    .injectScript('https://code.jquery.com/jquery-3.2.1.min.js')
+35.暫停測試程式，可指定暫停時間（ms）。 盡量不要使用這個
+    .pause(1000)
+36.結束 session，關閉瀏覽器。
+    end()
+37.對目前頁面截圖，並指定儲存檔名。
+    .saveScreenshot('./screenshots/index.png')
+38.

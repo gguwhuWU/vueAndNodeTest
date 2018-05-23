@@ -60,7 +60,7 @@ const config = {
       //"disable_colors": "",
       //出錯時是否螢幕截圖
       "screenshots": {
-        "enabled": true,
+        "enabled": false,
         "path": "./test/e2e/nightwatch/screenshots/",
         "on_failure": true,
         "on_error": true
