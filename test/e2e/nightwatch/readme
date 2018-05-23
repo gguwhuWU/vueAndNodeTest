@@ -1,0 +1,15 @@
+0.安裝
+    npm install -g nightwatch
+    nightwatch -v
+    安裝 Java Development Kit
+    java -version
+1.單一測試
+    nightwatch ./test/e2e/nightwatch/testCode/baseTest.js
+2.全部測試
+    nightwatch
+3.刪除temp-reports
+4.沒有指定環境，就是預設環境 default。
+    nightwatch = nightwatch --env default
+5.指定環境 staging，將 --env 代入 staging 即可。
+    nightwatch --env staging
+6.url 可以用 browser.launchUrl 拿預設資料
