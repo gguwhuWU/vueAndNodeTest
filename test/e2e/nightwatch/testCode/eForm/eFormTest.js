@@ -13,7 +13,7 @@ module.exports = {
     },
     '基本頁面顯示' : function (browser) {
         browser.
-        url(eform_url)
+        url(browser.globals.elements.eform_url)
         .assert.title('電子公文手機版')
         .verify.cssProperty('div#customLogo', 'width', '40px')
         .verify.cssProperty('div#customLogo', 'height', '35px')
@@ -51,7 +51,7 @@ module.exports = {
       //關閉右上角功能鍵 失敗
       '點開一篇公文' : function (browser) {
         browser
-        .click('a[href="'+eSign_url_1+'"]', function(result) {
+        .click('a[href="'+browser.globals.elements.eSign_url_1+'"]', function(result) {
             this.assert.strictEqual(result.status, 0);
         })
         .assert.title('簽呈')
