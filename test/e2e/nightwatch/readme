@@ -12,3 +12,25 @@
     nightwatch = nightwatch --env default
 5.指定環境 staging，將 --env 代入 staging 即可。
     nightwatch --env staging
+6.常用指令
+選項名稱	縮寫	預設值	功能描述
+--config	-c	./nightwatch.json	設定 nightwatch.json 的路徑。Nightwatch Test Runner 和 Selenium Webdriver 皆會使用這個設定檔。
+--output	-o	tests_outputs	JUnit XML 測試報告的所在位置。
+--reporter	-r	junit	預設定義報告所用的產生器名稱，或客製化報告工具所在的路徑。
+--env	-e	default	定義在 nightwatch.json 中選用的測試環境。
+--verbose			顯示其它擴充的 selenium 指令。
+--version	-v		目前所用 Nightwatch 的版本。
+--test	-t		指定只跑特定的 Test Suite 或 Module。Test Runners 在預設情況下會跑所有 src_folders 所列的所有資料夾（含其子資料夾）。
+--testcase			與 --test 合併使用。在目前的 Test Suit 或 Module 跑特定的 Test Case。
+--group	-g		只跑指定的 group 的測試程式。
+--skipgroup	-s		忽略指定的 group 的測試程式。
+--filter	-f		使用 glob expression 設定 filter，用來在載入檔案時利用 filter 過濾測試程式的檔名。
+--tag	-a		指定只跑特定的標籤的測試程式。
+--skiptags			忽略特定的標籤的測試程式，使用逗點分隔。
+--retries			重跑 n 次失敗或錯誤的 Test Case，n 即指定次數。重跑時也會重新執行 Test Hooks（beforeEach and afterEach）。
+--suiteRetries			重跑 n 次失敗或錯誤的 Test Suite / Test Module，n 即指定次數。重跑時也會重新執行 Test Hooks（before and after）。
+
+7.跑 標簽分類
+    nightwatch --tag t2 / -a t2
+8.跑 資料夾分類
+    nightwatch -g base
