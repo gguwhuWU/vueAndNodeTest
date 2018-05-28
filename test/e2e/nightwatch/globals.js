@@ -9,20 +9,10 @@ const reporter = new HtmlReporter({
 
 module.exports = {
   elements: {
-    eform_url : '',
-    user_id : '',
-    password : '',
     eSign_url_1 : ''
   },
-  // 目前使用eFomrLogin 在before會失敗
   commands:[{
-    eFomrLogin() {
-      return this
-        .url('@eform_url')
-        .setValue('input#userId', '@user_id')
-        .setValue('input#password', '@password')
-        .click('button#btnLogin');
-    }
+    
   }],
   reporter: reporter.fn,
   before: function(done) {

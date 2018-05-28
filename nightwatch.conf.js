@@ -10,7 +10,7 @@ const config = {
   //測試報告的位置
   "output_folder": "./test/e2e/nightwatch/reports",
   //Page Objects 的位置
-  "page_objects_path": './test/e2e/nightwatch/page_objects',
+  "page_objects_path": './test/e2e/nightwatch/page',
   //客製化指令的位置
   "custom_commands_path": './test/e2e/nightwatch/custom_commands',
   //客製化斷言的位置

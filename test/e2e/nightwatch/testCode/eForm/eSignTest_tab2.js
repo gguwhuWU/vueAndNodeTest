@@ -2,10 +2,7 @@ module.exports = {
     '@tags': ['esign','tab2'],
     //登入
     before : function(browser) {
-        browser.url(browser.globals.elements.eform_url);
-        browser.setValue('input#userId', browser.globals.elements.user_id);
-        browser.setValue('input#password', browser.globals.elements.password);
-        browser.click('button#btnLogin');
+        browser.login();
     },
     //登出
     after : function(browser) {

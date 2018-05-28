@@ -2,10 +2,7 @@ module.exports = {
     '@tags': ['esign','tab1'],
     //登入
     before : function(browser) {
-        browser.url(browser.globals.elements.eform_url);
-        browser.setValue('input#userId', browser.globals.elements.user_id);
-        browser.setValue('input#password', browser.globals.elements.password);
-        browser.click('button#btnLogin');
+        browser.login();
     },
     //登出
     after : function(browser) {
@@ -60,7 +57,7 @@ module.exports = {
             this.assert.strictEqual(result.status, 0);
         })
         .waitForElementVisible('div[data-page="planDetail"]')
-        .assert.containsText('div[data-page="planDetail"] > div.page-content > div.content-block > div#signIndex > div.navbar > div.navbar-inner > .center ', '擬辦資訊')
+        .assert.containsText('div[data-page="planDetail"] > div.page-content > div.content-block > div#signIndex > div.navbar > div.navbar-inner > .center', '擬辦資訊')
         .assert.containsText('ul#planDetail-accordion-item-ul > li.planDetail-accordion-item-li > #planIndex', '擬辦項目1')
         .verify.containsText('#planTitle', '全案 / 測試-會文回覆加徵詢')
         .verify.containsText('#planManager', '李秉奕')
