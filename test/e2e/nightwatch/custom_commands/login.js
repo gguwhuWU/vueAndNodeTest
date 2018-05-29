@@ -1,13 +1,11 @@
- const eform_url = '';
- const user_id = '';
- const password = '';
+const config = require('../../../../config/nightwatchConfig');
 
 exports.command = function(){
     var browser = this;
    browser
-    .url(eform_url)
-    .setValue('input#userId', user_id)
-    .setValue('input#password', password)
+    .url(config.eform_url)
+    .setValue('input#userId', config.user_id)
+    .setValue('input#password', config.password)
     .click('button#btnLogin');
     
     return this;

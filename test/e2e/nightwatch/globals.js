@@ -6,10 +6,11 @@ const reporter = new HtmlReporter({
   separateReportPerSuite: true, // 測試報告是否要加上 test suite 的名稱
   themeName: 'cover'
 });
+const config = require('../../../config/nightwatchConfig');
 
 module.exports = {
   elements: {
-    eSign_url_1 : ''
+    eSign_url_1 : config.eSign_url_1
   },
   commands:[{
     
