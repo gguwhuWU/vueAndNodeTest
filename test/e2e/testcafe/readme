@@ -1,0 +1,30 @@
+npm install -g testcafe
+
+執行-瀏覽器參數
+Browser	Browser Alias
+Chromium	chromium
+Google Chrome	chrome
+Google Chrome Canary	chrome-canary
+Internet Explorer	ie
+Microsoft Edge	edge
+Mozilla Firefox	firefox
+Opera	opera
+Safari	safari
+
+All 全部已安裝的瀏覽器
+
+執行:
+testcafe chrome test/e2e/testcafe/testcode/myVue/listTest.js -> 跑檔案
+testcafe chrome -f listTest -> 跑 sample-fixture
+testcafe chrome -c 2 -f listTest -> 平行跑2個
+testcafe chrome -f listTest -S -s test/e2e/testcafe/screenshots -> 一旦出現錯誤 就會截圖並放到指定路徑下
+
+testcafe "chrome:headless" test/e2e/testcafe/testcode/myVue/listTest.js -> 不會出現畫面，但是會跑超久
+testcafe "chrome:emulation:device=iphone 6" test/e2e/testcafe/testcode/myVue/listTest.js -> 會去跑chrome 手機模式
+testcafe "chrome --start-fullscreen" test/e2e/testcafe/testcode/myVue/listTest.js -> 會去跑全螢幕模式
+
+官方文件:
+http://devexpress.github.io/testcafe/documentation/test-api/
+
+參考範例專案:
+https://github.com/DevExpress/testcafe
