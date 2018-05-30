@@ -30,7 +30,7 @@
 <script type="text/x-template" id="componentInput">
     <div class="form-group row">
         <div class="col-8 text-center">
-            <input type="text" class="form-control" v-model.trim="newJob" placeholder="加入一個新工作" v-on:keyup.enter="submit">
+            <input id="inputJob" type="text" class="form-control" v-model.trim="newJob" placeholder="加入一個新工作" v-on:keyup.enter="submit">
         </div>
     </div>
 </script>
@@ -61,9 +61,9 @@
             </div>
             <br>
 
-            <button type="button" class="btn badge-size" :class="{ 'btn-info': isFilterAll }"  v-on:click="switchPage('all')">全部 <span class="badge" :class="[isFilterAll ? 'badge-light':'badge-secondary']">{{ allListTotal }}</span></button>
-            <button type="button" class="btn badge-size" :class="{ 'btn-danger': isFilterUndo }"  v-on:click="switchPage('undo')">未完成 <span class="badge" :class="[isFilterUndo ? 'badge-light':'badge-secondary']">{{ undoneTotal }}</span></button>
-            <button type="button" class="btn badge-size" :class="{ 'btn-success': isFilterComplete }"  v-on:click="switchPage('complete')">已完成 <span class="badge" :class="[isFilterComplete ? 'badge-light':'badge-secondary']">{{ completedTotal }}</span></button>
+            <button id="isFilterAll" type="button" class="btn badge-size" :class="{ 'btn-info': isFilterAll }"  v-on:click="switchPage('all')">全部 <span id="isFilterAllNumber" class="badge" :class="[isFilterAll ? 'badge-light':'badge-secondary']">{{ allListTotal }}</span></button>
+            <button id="isFilterUndo" type="button" class="btn badge-size" :class="{ 'btn-danger': isFilterUndo }"  v-on:click="switchPage('undo')">未完成 <span id="isFilterUndoNumber" class="badge" :class="[isFilterUndo ? 'badge-light':'badge-secondary']">{{ undoneTotal }}</span></button>
+            <button id="isFilterComplete" type="button" class="btn badge-size" :class="{ 'btn-success': isFilterComplete }"  v-on:click="switchPage('complete')">已完成 <span id="isFilterCompleteNumber" class="badge" :class="[isFilterComplete ? 'badge-light':'badge-secondary']">{{ completedTotal }}</span></button>
         </div>
     </div>
 </script>
