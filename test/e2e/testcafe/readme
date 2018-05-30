@@ -15,7 +15,11 @@ All 全部已安裝的瀏覽器
 
 執行:
 testcafe chrome test/e2e/testcafe/testcode/myVue/listTest.js -> 跑檔案
+testcafe chrome test/e2e/testcafe/testcode/myVue/ -> 跑此資料夾下所有檔案
+testcafe chrome test/e2e/testcafe/testcode/ -> 跑此資料夾下所有檔案
+
 testcafe chrome -f listTest -> 跑 sample-fixture
+testcafe chrome -F "list*" -> 跑 sample-fixture by  --fixture-grep / 只要是 fixture 有批配到 "list*" 的條件都去跑
 testcafe chrome -c 2 -f listTest -> 平行跑2個
 testcafe chrome -f listTest -S -s test/e2e/testcafe/screenshots -> 一旦出現錯誤 就會截圖並放到指定路徑下
 
