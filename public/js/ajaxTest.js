@@ -1,4 +1,4 @@
-var mock = new AxiosMockAdapter(axios);
+//var mock = new AxiosMockAdapter(axios);
 
 $(function () {
     Vue.use(VeeValidate);
@@ -28,15 +28,16 @@ function axiosTest1(){
                     //   name: 'wu',
                     //   password: '123456789' 
                     // });      
-        
-                    mock.onGet('/user', {
-                        params: {
-                            id: '70915'
-                        }
-                    }).reply(200, {
-                        name: 'wu',
-                        password: '123456789' 
-                    });      
+                    
+                    
+                    // mock.onGet('/user', {
+                    //     params: {
+                    //         id: '70915'
+                    //     }
+                    // }).reply(200, {
+                    //     name: 'wu',
+                    //     password: '123456789' 
+                    // });      
                    
                     axios
                     //   .get(`/user?id=${_this.userId}`)
@@ -66,10 +67,10 @@ function axiosTest1(){
           postData: function() {
             let _this = this
             
-            mock.onPost('/user').reply(200, {
-              id: 2, 
-              aName: 'jojo'
-            })
+            // mock.onPost('/user').reply(200, {
+            //   id: 2, 
+            //   aName: 'jojo'
+            // })
             
             axios
               .post('/user', {

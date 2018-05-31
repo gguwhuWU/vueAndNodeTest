@@ -1,4 +1,4 @@
-const config = require('../../../../config/nightwatchConfig');
+const config = require('../../../../config/eFormConfig');
 
 exports.command = function(){
     var browser = this;

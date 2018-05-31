@@ -6,7 +6,7 @@ const reporter = new HtmlReporter({
   separateReportPerSuite: true, // 測試報告是否要加上 test suite 的名稱
   themeName: 'cover'
 });
-const config = require('../../../config/nightwatchConfig');
+const config = require('../../../config/eFormConfig');
 
 module.exports = {
   elements: {
