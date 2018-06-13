@@ -19,7 +19,7 @@ app.use('/axios-mock-adapter', express.static(__dirname + '/node_modules/axios-m
 app.use('/vee-validate', express.static(__dirname + '/node_modules/vee-validate/dist/'))
 app.use('/vuetify', express.static(__dirname + '/node_modules/vuetify/dist/'))
 app.use('/vue-route', express.static(__dirname + '/node_modules/vue-route/src/'))
-
+app.use('/Decimal', express.static(__dirname + '/node_modules/decimal.js/'))
 
 //將html網頁交給ejs模組來處理
 app.engine('html', require('ejs').renderFile);

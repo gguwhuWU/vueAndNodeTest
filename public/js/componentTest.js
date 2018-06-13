@@ -12,7 +12,42 @@ $(function () {
     propTest10();
     propTest11();
     propTest12();
+    app_arrary();
 });
+
+//參考:
+// https://stackoverflow.com/questions/41135188/vue-deep-watching-an-array-of-objects-and-calculating-the-change/41135610?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+// http://jsfiddle.net/Linusborg/vxLhbo5m/162/
+function app_arrary(){
+    Vue.component('person-component', {
+        props: ["person"],
+        template: `
+            <div class="person">
+                {{person.name}}
+                <input type='text' v-model='person.age'/>
+            </div>`,
+        watch: {
+            person: {
+                handler: function(newValue) {
+                    console.log("Person with ID:" + newValue.id + " modified")
+                    console.log("New age: " + newValue.age)
+                },
+                deep: true
+            }
+        }
+    });
+    
+    new Vue({
+        el: '#app_arrary',
+        data: {
+            people: [
+              {id: 0, name: 'Bob', age: 27},
+              {id: 1, name: 'Frank', age: 32},
+              {id: 2, name: 'Joe', age: 38}
+            ]
+        }
+    });
+}
 
 //extend component
 function cTest(){
@@ -34,19 +69,52 @@ function cTest(){
     });
     */
 
+    //參考 https://stackoverflow.com/questions/41135188/vue-deep-watching-an-array-of-objects-and-calculating-the-change/41135610?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
     //我們的組件會根據註冊在哪，有不同語意名。 用 Vue.extend 方法，將組件定義拆出來。
    var MenuItem = Vue.extend({
-        template: '<ul><li v-for="item in menuItems">{{ item.text }}</li></ul>',
+        template: '<ul><li v-for="item in menuItems"><input type="text" v-model="item.text" /><input type="text" v-model="item.jojo" /></li></ul>',
         data: function() {
             return {
                 menuItems: [{
-                    text: 'About me'
+                    text: 'About me', jojo: '123'
                 }, {
-                    text: 'Articles'
+                    text: 'Articles', jojo: '456'
                 }, {
-                    text: 'contact'
+                    text: 'contact', jojo: '789'
                 }]
+                ,oldMenuItems: []
             };
+        },
+        methods: {
+            setValue:function(){
+            this.$data.oldMenuItems=_.cloneDeep(this.$data.menuItems);
+          },
+        },
+        mounted() {
+              this.setValue();
+        },
+        watch: {
+            menuItems: {
+                handler: function (after, before) {
+                    // Return the object that changed
+                    var vm = this;
+                    let changed = after.filter( function( p, idx ) {
+                        return Object.keys(p).some( function( prop ) {
+                            return p[prop] !== vm.$data.oldMenuItems[idx][prop];
+                        })
+                    })
+                    // Log it
+                    vm.setValue();
+                    console.log(changed)
+                  },
+                deep: true
+            }
+        },
+        computed: {
+            countjojo: function () {
+                console.log(this.menuItems)
+                return this.menuItems;
+            }
         }
     });
 
@@ -68,12 +136,15 @@ function cTest(){
         }
         /* 有註冊 <description-section> */
     });
+
+    /*
     var app2 = new Vue({
         el: '#app2',
         components: {
             'my-menu': MenuItem
         }
     });
+    */
 }
 
 //全域 component

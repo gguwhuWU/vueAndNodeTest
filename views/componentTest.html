@@ -8,6 +8,7 @@
 <link rel='stylesheet' href="toastr/toastr.min.css"></script>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
 <script src="jquery/jquery.min.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="toastr/toastr.min.js"></script>
@@ -16,6 +17,11 @@
 <script src="js/componentTest.js"></script>
 </head>
 <body>
+    <div id="app_arrary">
+        <p>List of people:</p>
+        <person-component :person="person" v-for="person in people"></person-component>
+    </div>
+
     <div id="app1">
         <menu-section></menu-section>
         <description-section></description-section>

@@ -11,6 +11,7 @@
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
 <script src="vue/vue.min.js"></script>
+<script src="/Decimal/decimal.min.js"></script>
 <script src="js/main.js"></script>
 </head>
 <body>
@@ -48,13 +49,14 @@
         {{ index }} - {{ key }} : {{ value }}
     </li>
 
-    <input	type="text" v-model="userInfo.FirstName" />
-    <input	type="text" v-model="userInfo.LastName" />
+    <input type="text" v-model="userInfo.FirstName" />
+    <input type="text" v-model="userInfo.LastName" />
 </div>
 
 <div id="userProfile">
-    <p> 名字: {{ wufirstName }}</p>
-    <p> 姓氏: {{ wulastName }}</p>
+        
+    <p> 名字: <input type="text" v-model="wufirstName" /></p>
+    <p> 姓氏: <input type="text" v-model="wulastName" /></p>
     <p>{{ wufullName }}</p>
     <p>{{ wushortName }}</p>
     <button v-on:click="countUserClick">Add 1</button>

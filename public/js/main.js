@@ -3,7 +3,23 @@ $(function () {
     vueDom2();
     vueDom3();
     asyncAwaitTest2();
+
+    testDecimal();
 });
+
+function testFloat(){
+    console.log('直接加法運算 0.1 + 0.2 =', 0.1 + 0.2); //0.3?
+    console.log('直接減法運算 1.0 - 0.7 =', 1.0 - 0.7); //0.3?
+    console.log('直接乘法運算 1.01 * 1.003 =', 1.01 * 1.003); //1.01303?
+    console.log('直接除法運算 0.029 / 10 =', 0.029 / 10); //0.0029?
+}
+
+function testDecimal(){
+    console.log('直接加法運算 0.1 + 0.2 =', new Decimal(0.1).add(new Decimal(0.2)).toNumber()); //0.3?
+    console.log('直接減法運算 1.0 - 0.7 =', new Decimal(1.0).sub(new Decimal(0.7)).toNumber()); //0.3?
+    console.log('直接乘法運算 1.01 * 1.003 =', new Decimal(1.01).mul(new Decimal(1.003)).toNumber()); //1.01303?
+    console.log('直接除法運算 0.029 / 10 =', new Decimal(0.029).div(new Decimal(10)).toNumber()); //0.0029?
+}
 
 function asyncAwaitTest2(){
     async function showGitHubUser(handle) {
@@ -829,9 +845,16 @@ function vueDom2(){
         //          alert(val);
         //   }
             userInfo: {
-                handler: function (val, oldVal) { alert('user內的資料改變了'); },
+                handler: function (val, oldVal) { 
+                    //alert('user內的資料改變了'); 
+                },
+                deep: true
+            },
+            'userInfo.FirstName': {
+                handler: function (val, oldVal) { alert('user FirstName資料改變了'); },
                 deep: true
             }
         }
     });
 }
+
