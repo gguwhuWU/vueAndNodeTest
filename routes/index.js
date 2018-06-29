@@ -24,9 +24,12 @@ router.get('/listTest', function(req, res, next) {
   res.render('listTest.html');
 });
 
-
 router.get('/vuetifyTest', function(req, res, next) {
   res.render('vuetify.html');
+});
+
+router.get('/materializeTest', function(req, res, next) {
+  res.render('materializeTest.html');
 });
 
 router.get('/user', function(req, res, next) {

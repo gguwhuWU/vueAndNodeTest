@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>index</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel='stylesheet' href='css/main.css' />
+<link rel='stylesheet' href='materializeCss/css/materialize.min.css' />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="jquery/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lodash@4.17.5/lodash.min.js"></script>
+<script src="vue/vue.min.js"></script>
+<script src="/Decimal/decimal.min.js"></script>
+<script src="materializeCss/js/materialize.min.js"></script>
+<script src="js/materializeTest.js"></script>
+</head>
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo">Logo - fixed</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#!">Sass</a></li>
+                    <li><a href="#!">Components</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+    </ul>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Logo</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#!">Sass</a></li>
+                <li><a href="#!">Components</a></li>
+                <li><a href="#!">Javascript</a></li>
+                <li><a href="#!">Mobile</a></li>
+            </ul>
+        </div>
+    </nav>
+        
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#!">Sass</a></li>
+        <li><a href="#!">Components</a></li>
+        <li><a href="#!">Javascript</a></li>
+        <li><a href="#!">Mobile</a></li>
+    </ul>     
+
+    <nav>
+        <div class="nav-wrapper">
+            <form>
+                <div class="input-field">
+                  <input id="search" type="search" required>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><i class="material-icons">cloud</i>Logo</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#!"><i class="material-icons">view_module</i></a></li>
+                <li><a href="#!"><i class="material-icons left">search</i>Link with Left Icon</a></li>
+                <li><a href="#!"><i class="material-icons right">view_module</i>Link with Right Icon</a></li>
+                <li><a href="">Components <span class="new badge">4</span></a></li>
+                <li class="active"><a href="">JavaScript</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <nav>
+        <div class="nav-wrapper red lighten-3">
+            <div class="col s12">
+                <a href="#!" class="breadcrumb">First</a>
+                <a href="#!" class="breadcrumb">Second</a>
+                <a href="#!" class="breadcrumb">Third</a>
+                <a href="#!" class="breadcrumb">4</a>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="nav-extended">
+            <div class="nav-wrapper center">
+              <a href="#" class="brand-logo">Logo</a>
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li>
+                <li><a href="collapsible.html">JavaScript</a></li>
+                <li><a class="waves-effect waves-light btn">Button</a></li>
+              </ul>
+            </div>
+            <div class="nav-content">
+                <span class="nav-title">Title</span>
+                <a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">
+                    <i class="material-icons">add</i>
+                </a>
+              <ul class="tabs tabs-transparent">
+                <li class="tab"><a href="#test1">Test 1</a></li>
+                <li class="tab"><a class="active" href="#test2">Test 2</a></li>
+                <li class="tab disabled"><a href="#test3">Disabled Tab</a></li>
+                <li class="tab"><a href="#test4">Test 4</a></li>
+              </ul>
+            </div>
+    </nav>
+
+    <div id="test1" class="col s12">Test 1</div>
+    <div id="test2" class="col s12">Test 2</div>
+    <div id="test3" class="col s12">Test 3</div>
+    <div id="test4" class="col s12">Test 4</div>
+                
+    <div class="card-panel deep-orange lighten-4 brown-text text-darken-2 hoverable">This is a card panel with a teal lighten-2 class ( Hoverable Card Panel)</div>
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+
+        <div class="collection">
+            <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
+            <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
+            <a href="#!" class="collection-item active">Alan</a>
+            <a href="#!" class="collection-item"><span class="new badge" data-badge-caption="custom caption">4</span>Alan</a>
+            <a href="#!" class="collection-item"><span class="badge" data-badge-caption="custom caption">4</span>Alan</a>
+            <a href="#!" class="collection-item"><span class="new badge red">4</span>Alan</a>
+            <a href="#!" class="collection-item"><span class="new badge blue">4</span>Alan</a>
+        </div>
+
+        <ul class="collection with-header">
+            <li class="collection-header"><h4>First Names</h4></li>
+            <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+            <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+        </ul>
+
+        <ul class="collection">
+            <li class="collection-item avatar">
+                <i class="material-icons circle green">insert_chart</i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                     Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+            <li class="collection-item avatar">
+                <i class="material-icons circle red">play_arrow</i>
+                <span class="title">Title</span>
+                <p>First Line <br>
+                    Second Line
+                </p>
+                <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+            </li>
+        </ul>
+
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">filter_drama</i>
+                    First
+                    <span class="new badge">4</span>
+                </div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">place</i>
+                    Second
+                    <span class="badge">1</span>
+                </div>
+                <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+            </li>
+        </ul>
+
+        <div class="row">
+            <div class="col s12 m6">
+                <div class="card blue-grey darken-1">
+                    <div class="card-content white-text">
+                        <span class="card-title">Card Title</span>
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card horizontal">
+                    <div class="card-image">
+                        <img src="img/A04.jpg">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                          <p>I am a very simple card. I am good at containing small bits of information.</p>
+                        </div>
+                        <div class="card-action">
+                          <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/A04.jpg">
+                        <span class="card-title">Card Title</span>
+                        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/A04.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card sticky-action">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="img/A04.jpg">
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">This is a link</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">This is a link</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card">
+                    <div class="card-content">
+                        <p>I am a very simple card</p>
+                    </div>
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab"><a href="#inbox">Test 1</a></li>
+                            <li class="tab"><a class="active" href="#unread">Test 2</a></li>
+                            <li class="tab disabled"><a href="#outbox">Test 3</a></li>
+                            <li class="tab"><a href="#sent">Test 4</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-content grey lighten-4">
+                        <div id="inbox">Test 1</div>
+                        <div id="unread">Test 2</div>
+                        <div id="outbox">Test 3</div>
+                        <div id="sent">Test 4</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6">
+                <div class="card-panel teal">
+                    <span class="white-text">I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.
+                    </span>
+                </div>
+            </div>
+
+            <div class="col s12 red lighten-2"> <i class="large material-icons">insert_chart</i>This div is 12-columns wide on all screen sizes</div>
+            <div class="col s6 blue lighten-2">6-columns (one-half)</div>
+            <div class="col s6 green lighten-2 deep-orange-text ">6-columns (one-half)</div>
+            <div class="col s6 offset-s6 purple indigo-text text-lighten-5"><span class="flow-text">6-columns (offset-by-6)</span></div>
+            <div class="col s7 push-s5 cyan lighten-4"><span class="flow-text">This div is 7-columns wide on pushed to the right by 5-columns.</span></div>
+            <div class="col s5 pull-s7 light-green lighten-2"><span class="flow-text">5-columns wide pulled to the left by 7-columns.</span></div>
+            <div class="grid-example col s12 grey lighten-1">
+                <span class="flow-text">I am always full-width (col s12)</span>
+                <!-- Scaled in -->
+                <a id="scale-demo" href="#!" class="btn-floating btn-large scale-transition">
+                    <i class="material-icons">add</i>
+                </a> 
+                <a class="btn-floating btn-large waves-effect waves-light red">
+                    <i class="material-icons">add</i>
+                </a>
+                <a id="scale-demo-trigger" href="#!" class="btn right">Toggle Scale</a>
+                <table class="indigo accent-1 centered highlight responsive-table">
+                    <thead>
+                          <tr>
+                              <th>Name</th>
+                              <th>Item Name</th>
+                              <th>Item Price</th>
+                          </tr>
+                    </thead>
+                
+                    <tbody>
+                          <tr>
+                            <td>Alvin</td>
+                            <td>Eclair</td>
+                            <td>$0.87</td>
+                          </tr>
+                          <tr>
+                            <td>Alan</td>
+                            <td>Jellybean</td>
+                            <td>$3.76</td>
+                          </tr>
+                          <tr>
+                            <td>Jonathan</td>
+                            <td>Lollipop</td>
+                            <td>$7.00</td>
+                          </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="grid-example col s12 m6 brown lighten-3"><span class="flow-text">I am full-width on mobile (col s12 m6)</span></div>
+        </div>
+        <div class="row">
+            <div class="col s12 m4 l3 amber accent-1 z-depth-5"> <!-- Note that "m4 l3" was added -->
+                <!-- Grey navigation panel
+            
+                    This content will be:
+                3-columns-wide on large screens,
+                4-columns-wide on medium screens,
+                12-columns-wide on small screens  -->
+                (Shadow)z-depth-5
+            </div>
+            <div class="col s12 m8 l9 yellow accent-1"> <!-- Note that "m8 l9" was added -->
+                <!-- Teal page content
+            
+                        This content will be:
+                9-columns-wide on large screens,
+                8-columns-wide on medium screens,
+                 12-columns-wide on small screens  -->
+                2
+                <a class="btn-floating pulse"><i class="material-icons">menu</i></a>
+                <a class="btn-floating btn-large pulse"><i class="material-icons">cloud</i></a>
+                <a class="btn-floating btn-large cyan pulse"><i class="material-icons">edit</i></a>
+                <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+                <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                </button>
+                <a class="waves-effect waves-light btn-large">Button</a>
+                <a class="waves-effect waves-light btn">Button</a>
+                <a class="waves-effect waves-light btn-small">Button</a>
+                <a class="btn disabled">Button</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 blue-grey lighten-4"><p>s12</p></div>
+            <div class="col s12 m4 l2 red lighten-4"><p>s12 m4 l2</p></div>
+            <div class="col s12 m4 l8 pink lighten-4"><p>s12 m4 l8</p></div>
+            <div class="col s12 m4 l2 purple lighten-4"><p>s12 m4 l2</p></div>
+        </div>
+        <div class="row">
+            <div class="col s12 m6 l3 deep-purple lighten-4"><p>s12 m6 l3</p></div>
+            <div class="col s12 m6 l3 indigo lighten-4"><p>s12 m6 l3</p></div>
+            <div class="col s12 m6 l3 blue lighten-4"><p>s12 m6 l3</p></div>
+            <div class="col s12 m6 l3 light-blue lighten-4"><p>s12 m6 l3</p></div>
+        </div>
+        <div class="valign-wrapper teal lighten-3" style="min-height:100px">
+            <h5>This should be vertically aligned</h5>
+        </div>
+        <div class="green lighten-3">
+            <h5 class="left-align">This should be left aligned</h5> 
+            <h5 class="right-align">This should be right aligned</h5>
+            <h5 class="center-align">This should be center aligned</h5>
+        </div>
+        <div class="left lime lighten-2">Left Quick Floats div</div>
+        <div class="right lime lighten-2">Right Quick Floats div</div>
+        <div class="hide-on-small-only center-align orange lighten-2">
+            Hiding/Showing Content
+            <h4 class="truncate">This is an extremely long title that will be truncated</h4>
+        </div>
+        <div class="card-panel deep-orange lighten-4 hoverable">
+            123
+            <img class="responsive-img" src="img/A04.jpg">
+            456
+        </div>
+        <div class="col s12 m8 offset-m2 l6 offset-l3">
+                <div class="card-panel grey lighten-5 z-depth-1">
+                  <div class="row valign-wrapper">
+                    <div class="col s2">
+                      <img src="img/A04.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                    </div>
+                    <div class="col s10">
+                      <span class="black-text">
+                        This is a square image. Add the "circle" class to it to make it appear circular.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+        </div>
+        <blockquote>
+            This is an example quotation that uses the blockquote tag.
+        </blockquote>
+        <blockquote class="flow-text">
+            This is an example quotation that uses the blockquote tag.(I am Flow Text)
+        </blockquote>
+        <div class="video-container">
+            <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <video class="responsive-video" controls>
+            <source src="video/testVideo.mp4" type="video/mp4">
+        </video>
+
+        <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+
+        <div class="progress">
+            <div class="determinate" style="width: 70%"></div>
+        </div>
+
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+
+        <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+        </div>
+
+        <div class="preloader-wrapper active">
+                <div class="spinner-layer spinner-blue">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+          
+                <div class="spinner-layer spinner-red">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+          
+                <div class="spinner-layer spinner-yellow">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+          
+                <div class="spinner-layer spinner-green">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div><div class="gap-patch">
+                    <div class="circle"></div>
+                  </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+        </div>
+    </div>
+    
+    <div class="divider"></div>
+    <div class="section">
+        <h5>Section 1</h5>
+        <p>Stuff - 我要放在最下面或最前面 擴充的額外區塊</p>
+    </div>    
+    
+    <footer class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Footer Content</h5>
+                  <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2014 Copyright Text
+              <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+              </div>
+            </div>
+    </footer>
+</body>
+</html>
