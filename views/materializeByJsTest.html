@@ -15,14 +15,399 @@
 <script src="js/materializeByJsTest.js"></script>
 </head>
 <body>
-    <div class="carousel  pink lighten-5">
-        <a class="carousel-item" href="#one!"><img src="img/A01.jpg"></a>
-        <a class="carousel-item" href="#two!"><img src="img/A02.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="img/A03.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="img/A04.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="img/A05.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="img/A06.jpg"></a>
-        <a class="carousel-item" href="#three!"><img src="img/A07.jpg"></a>
+    <!-- <ul id="slide-out" class="sidenav sidenav-fixed">  -->
+        <ul id="slide-out" class="sidenav "> 
+        <li>
+            <div class="user-view">
+              <div class="background">
+                <img src="img/A01.jpg" style="min-width: 300px">
+              </div>
+              <a href="#user"><img class="circle" src="img/A04.jpg"></a>
+              <a href="#name"><span class="white-text name">John Doe</span></a>
+              <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+            </div>
+        </li>
+        <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+        <li><a href="#!">Second Link</a></li>
+        <li><div class="divider"></div></li>
+        <li><a class="subheader">Subheader</a></li>
+        <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        <li><a class="sidenav-close" href="#!"><i class="material-icons">close</i>0.0</a></li>
+        <li class="no-padding">
+            <ul class="collapsible collapsible-accordion">
+                <li>
+                    <a class="collapsible-header" data-target='dropdown1'>Dropdown<i class="material-icons">arrow_drop_down</i></a>
+                    <div class="collapsible-body" id='dropdown1'>
+                      <ul>
+                        <li><a href="#!">First</a></li>
+                        <li><a href="#!">Second</a></li>
+                        <li><a href="#!">Third</a></li>
+                        <li><a href="#!">Fourth</a></li>
+                      </ul>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div class="container">
+        <a href="#" data-target="slide-out" class="sidenav-trigger right show-on-large"><i class="material-icons">menu</i></a>
+        <div class="col hide-on-small-only">
+            <ul class="section table-of-contents">
+                <li><a href="#introduction">Introduction</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">textsms</i>
+                      <input type="text" id="autocomplete-input" class="autocomplete">
+                      <label for="autocomplete-input">Autocomplete</label>
+                    </div>
+                </div>
+            </div>
+            <button class="btn" id="autocompleteButton">update - Autocomplete - data</button>
+        </div>
+
+        <div class="light-blue lighten-4">
+            <div class="row">
+                <div class="col s12 m8 offset-m2">
+                    <div class="input-field col s12">
+                        <select>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Select</label>
+                    </div>
+                                    
+                    <div class="input-field col s12">
+                        <select multiple id ="Materialize_Multiple_Select">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="1">Option 1</option>
+                            <option value="2">Option 2</option>
+                            <option value="3">Option 3</option>
+                        </select>
+                        <label>Materialize Multiple Select</label>
+                    </div>
+                                    
+                    <div class="input-field col s12">
+                        <select>
+                            <optgroup label="team 1">
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                            </optgroup>
+                            <optgroup label="team 2">
+                                <option value="3">Option 3</option>
+                                <option value="4">Option 4</option>
+                            </optgroup>
+                        </select>
+                        <label>Optgroups</label>
+                    </div>
+                                    
+                    <div class="input-field col s12 m6">
+                        <select class="icons">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="" data-icon="img/A01.jpg">example 1</option>
+                            <option value="" data-icon="img/A02.jpg">example 2</option>
+                            <option value="" data-icon="img/A03.jpg">example 3</option>
+                        </select>
+                        <label>Images in select</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <select class="icons">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="" data-icon="img/A04.jpg" class="left">example 1</option>
+                            <option value="" data-icon="img/A05.jpg" class="left">example 2</option>
+                            <option value="" data-icon="img/A06.jpg" class="left">example 3</option>
+                        </select>
+                        <label>Images in select</label>
+                    </div>
+                                    
+                    <label>Browser Select</label>
+                    <select class="browser-default">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <div class="col offset-m4">
+                        <button class="btn lime darken-4" id="showSelectedData">show Multiple selected value</button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <div class="green darken-1">
+            <div class="chip">
+                <img src="img/A04.jpg" alt="Contact Person">jojo!<i class="close material-icons">close</i>
+            </div>
+            <button class="btn red lighten-1" id="addChipData">add Chip Data</button>
+            <button class="btn blue lighten-2" id="delChipData">del Chip Data</button>
+            <button class="btn indigo lighten-2" id="showDateTime">show Time</button>
+            <button class="btn teal lighten-3" id="setDateTime">set dateTime</button>
+            <br>
+            <!-- Default with no input (automatically generated)  -->
+            1.<div class="chips" id="myChips"></div>
+            2.<div class="chips chips-initial"></div>
+            3.<div class="chips chips-placeholder"></div>
+            4.<div class="chips chips-autocomplete"></div>
+            <!-- Customizable input  -->
+            5.<div class="chips">
+                <input class="custom-class">
+            </div>
+            Puckers-datepicker.<input type="text" class="datepicker">
+            Puckers-timepicker.<input type="text" class="timepicker">
+        </div>
+
+        <ul id="tabs-swipe-demo" class="tabs">
+            <li class="tab col s3"><a class="" href="#test-swipe-1">Test 1</a></li>
+            <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
+            <li class="tab col s3"><a class="" href="#test-swipe-3">Test 3</a></li>
+        </ul>
+        <div id="test-swipe-1" class="col s12 blue lighten-4" >
+            Test 1
+            <form action="#">
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" checked />
+                        <span>Red</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" />
+                        <span>Yellow</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input class="with-gap" name="group1" type="radio"  />
+                        <span>Green</span>
+                      </label>
+                    </p>
+                    <p>
+                      <label>
+                        <input name="group1" type="radio" disabled="disabled" />
+                        <span>Brown</span>
+                      </label>
+                    </p>
+            </form>
+
+            <!-- Switch -->
+            <div class="switch">
+                <label>
+                Off
+                <input type="checkbox">
+                <span class="lever"></span>
+                On
+                </label>
+            </div>
+                
+            <!-- Disabled Switch -->
+            <div class="switch">
+                <label>
+                Off
+                <input disabled type="checkbox">
+                <span class="lever"></span>
+                On
+                </label>
+            </div>
+        </div>
+        <div id="test-swipe-2" class="col s12 lime lighten-4" >
+            Test 2
+            <form action="#">
+                    <p>
+                    <label>
+                        <input type="checkbox" />
+                        <span>Red</span>
+                    </label>
+                    </p>
+                    <p>
+                    <label>
+                        <input type="checkbox" checked="checked" />
+                        <span>Yellow</span>
+                    </label>
+                    </p>
+                    <p>
+                    <label>
+                        <input type="checkbox" class="filled-in" checked="checked" />
+                        <span>Filled in</span>
+                    </label>
+                    </p>
+                    <p>
+                    <label>
+                        <input id="indeterminate-checkbox" type="checkbox" />
+                        <span>Indeterminate Style</span>
+                    </label>
+                    </p>
+                    <p>
+                    <label>
+                        <input type="checkbox" checked="checked" disabled="disabled" />
+                        <span>Green</span>
+                    </label>
+                    </p>
+                    <p>
+                    <label>
+                        <input type="checkbox" disabled="disabled" />
+                        <span>Brown</span>
+                    </label>
+                    </p>
+            </form>
+        </div>
+        <div id="test-swipe-3" class="col s12 green lighten-4" >
+            Test 3
+            
+        </div>
+
+        <div id="mytest1" class="carousel red" style="max-height: 250px;">
+            <a class="carousel-item" href="#one!"><img src="img/A01.jpg"></a>
+            <a class="carousel-item" href="#two!"><img src="img/A02.jpg"></a>
+            <a class="carousel-item" href="#three!"><img src="img/A03.jpg"></a>
+            <a class="carousel-item" href="#four!"><img src="img/A04.jpg"></a>
+            <a class="carousel-item" href="#five!"><img src="img/A05.jpg"></a>
+            <a class="carousel-item" href="#six!"><img src="img/A06.jpg"></a>
+            <a class="carousel-item" href="#seven!"><img src="img/A07.jpg"></a>
+        </div>
+            
+        <div class="parallax-container" style="max-height: 200px;">
+            <div class="parallax"><img src="img/A01.jpg"></div>
+        </div>
+        <div class="parallax-container" style="max-height: 200px;">
+            <div class="parallax"><img src="img/A02.jpg"></div>
+        </div>
+
+        <div id="mytest2" class="carousel carousel-slider">
+            <a class="carousel-item" href="#one!"><img src="img/A01.jpg" style="max-height: 401px;"></a>
+            <a class="carousel-item" href="#two!"><img src="img/A02.jpg" style="max-height: 401px;"></a>
+            <a class="carousel-item" href="#three!"><img src="img/A03.jpg" style="max-height: 401px;"></a>
+        </div>
+
+        <div id="mytest3" class="carousel carousel-slider center">
+            <div class="carousel-fixed-item center">
+                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+            </div>
+            <div class="carousel-item purple white-text" href="#one!">
+                <h2>First Panel</h2>
+                <p class="white-text">This is your first panel</p>
+            </div>
+            <div class="carousel-item amber white-text" href="#two!">
+                <h2>Second Panel</h2>
+                <p class="white-text">This is your second panel</p>
+            </div>
+            <div class="carousel-item green white-text" href="#three!">
+                <h2>Third Panel</h2>
+                <p class="white-text">This is your third panel</p>
+            </div>
+            <div class="carousel-item blue white-text" href="#four!">
+                <h2>Fourth Panel</h2>
+                <p class="white-text">This is your fourth panel</p>
+            </div>
+        </div>
+
+         <!-- Element Showed -->
+        <a id="mymenu" class="waves-effect waves-light btn btn-floating" ><i class="material-icons">menu</i></a>
+
+        <!-- Tap Target Structure -->
+        <div id="myTab" class="tap-target" data-target="mymenu">
+            <div class="tap-target-content">
+            <h5>Title</h5>
+            <p>A bunch of text</p>
+            </div>
+        </div>
+
+        <img id="myTest5" class="materialboxed" src="img/A07.jpg" data-caption="A picture of a way with a group of trees in a park">
+
+        <div id="myTest6" class="slider">
+                <ul class="slides">
+                  <li>
+                    <img src="img/A04.jpg"> <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/A05.jpg"> <!-- random image -->
+                    <div class="caption left-align">
+                      <h3>Left Aligned Caption</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/A06.jpg"> <!-- random image -->
+                    <div class="caption right-align">
+                      <h3>Right Aligned Caption</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                  <li>
+                    <img src="img/A07.jpg"> <!-- random image -->
+                    <div class="caption center-align">
+                      <h3>This is our big Tagline!</h3>
+                      <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+                    </div>
+                  </li>
+                </ul>
+        </div>
+        
+         <!-- Modal Trigger -->
+        <a class="waves-effect waves-light btn modal-trigger tooltipped" href="#modal1" data-position="bottom" data-tooltip="I am a tooltip1">Modal1-Trigger</a>
+        <button data-target="modal2" class="btn modal-trigger tooltipped" data-position="top" data-tooltip="I am a tooltip2">Modal2-Trigger</button>
+        <button data-target="modal3" class="btn modal-trigger">Modal3-Trigger</button>
+        <a onclick="M.toast({html: 'I am a toast', classes: 'rounded', id:'toast-container'})" class="btn">Toast!</a>
+        
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
+            </div>
+        </div>
+
+        <div id="modal2" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                    <h4>Modal Header</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                </div>
+                <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
+                </div>
+        </div>
+
+        <div id="modal3" class="modal bottom-sheet">
+                <div class="modal-content">
+                  <h4>Modal Header</h4>
+                  <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+        </div>
+
+        
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <div id="introduction" class="section scrollspy">
+                    <p>Content1 </p>
+                </div>
+            </div>
+        </div>
     </div>
+
+   
 </body>
 </html>

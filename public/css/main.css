@@ -107,3 +107,10 @@ table.table td .add {
 .badge-size {
   font-size: 1em!important;
 }
+
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 50%;
+  left:50%;
+}

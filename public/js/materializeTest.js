@@ -1,6 +1,7 @@
 $(function () {	
     SwitchToggleScale();
     StartComponents();
+    UseComponents();
 });
 
 function SwitchToggleScale(){
@@ -38,4 +39,15 @@ function StartComponents(){
 
     $(".dropdown-trigger").dropdown();
     $('.sidenav').sidenav();
+}
+
+function UseComponents(){
+
+    setTimeout(function(){
+        $('.collapsible').collapsible('open', 1);
+    }, 1000);
+
+    setTimeout(function(){
+        $('.collapsible').collapsible('close', 1);
+    }, 2000);
 }
