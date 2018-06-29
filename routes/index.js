@@ -32,6 +32,10 @@ router.get('/materializeTest', function(req, res, next) {
   res.render('materializeTest.html');
 });
 
+router.get('/materializeByJsTest', function(req, res, next) {
+  res.render('materializeByJsTest.html');
+});
+
 router.get('/user', function(req, res, next) {
 
   if (req.query.id == 70915)
