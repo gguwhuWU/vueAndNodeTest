@@ -6,6 +6,7 @@ $(function () {
     UseChip();
     UseDatepicker();
     UseSelected();
+    UseInput();
 });
 
 function StartComponents(){
@@ -115,6 +116,17 @@ function StartComponents(){
     });
 
     $('select').formSelect();
+}
+
+function UseInput(){
+
+    $('#upTextValue').click(function(){
+        $('#textarea1').val('1111111111111111111111111111111XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX000000000000000000000000000000000000000JJJJJJJJJJJJJJJJJJJJJJJJJJJJJ');
+        M.textareaAutoResize($('#textarea1'));
+        $('#textarea1').focus();
+    });
+
+    $('input#input_text, textarea#textarea2').characterCounter();
 }
 
 function UseSelected(){
